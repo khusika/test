@@ -1,0 +1,17 @@
+name: HTML Validator
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action-experimental@main
+        with:
+          root: ./
+          log_level: INFO
+          css: true
